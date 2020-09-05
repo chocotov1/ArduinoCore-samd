@@ -145,6 +145,93 @@ mkrzero.build.pid=0x804f
 mkrzero.bootloader.tool=openocd
 mkrzero.bootloader.file=mkrzero/samd21_sam_ba_arduino_mkrzero.bin
 
+mkrzero_no_bl.name=Arduino MKRZERO (no bootloader)
+mkrzero_no_bl.vid.0=0x2341
+mkrzero_no_bl.pid.0=0x804f
+mkrzero_no_bl.vid.1=0x2341
+mkrzero_no_bl.pid.1=0x004f
+
+mkrzero_no_bl.debug.tool=gdb-openocd
+mkrzero_no_bl.upload.tool=bossac
+mkrzero_no_bl.upload.protocol=sam-ba
+mkrzero_no_bl.upload.maximum_size=262144
+mkrzero_no_bl.upload.maximum_data_size=32768
+mkrzero_no_bl.upload.use_1200bps_touch=true
+mkrzero_no_bl.upload.wait_for_upload_port=true
+mkrzero_no_bl.upload.native_usb=true
+mkrzero_no_bl.build.mcu=cortex-m0plus
+mkrzero_no_bl.build.f_cpu=48000000L
+mkrzero_no_bl.build.usb_product="Arduino MKRZero"
+mkrzero_no_bl.build.usb_manufacturer="Arduino LLC"
+mkrzero_no_bl.build.board=SAMD_MKRZERO
+mkrzero_no_bl.build.core=arduino
+mkrzero_no_bl.build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags}
+mkrzero_no_bl.build.ldscript=linker_scripts/gcc/flash_without_bootloader.ld
+mkrzero_no_bl.build.openocdscript=openocd_scripts/arduino_zero.cfg
+mkrzero_no_bl.build.variant=mkrzero
+mkrzero_no_bl.build.vid=0x2341
+mkrzero_no_bl.build.pid=0x804f
+mkrzero_no_bl.bootloader.tool=openocd
+mkrzero_no_bl.bootloader.file=mkrzero/samd21_sam_ba_arduino_mkrzero.bin
+
+mkrzero_no_bl_24mhz.name=Arduino MKRZERO (no bootloader, 24 MHz)
+mkrzero_no_bl_24mhz.vid.0=0x2341
+mkrzero_no_bl_24mhz.pid.0=0x804f
+mkrzero_no_bl_24mhz.vid.1=0x2341
+mkrzero_no_bl_24mhz.pid.1=0x004f
+
+mkrzero_no_bl_24mhz.debug.tool=gdb-openocd
+mkrzero_no_bl_24mhz.upload.tool=bossac
+mkrzero_no_bl_24mhz.upload.protocol=sam-ba
+mkrzero_no_bl_24mhz.upload.maximum_size=262144
+mkrzero_no_bl_24mhz.upload.maximum_data_size=32768
+mkrzero_no_bl_24mhz.upload.use_1200bps_touch=true
+mkrzero_no_bl_24mhz.upload.wait_for_upload_port=true
+mkrzero_no_bl_24mhz.upload.native_usb=true
+mkrzero_no_bl_24mhz.build.mcu=cortex-m0plus
+mkrzero_no_bl_24mhz.build.f_cpu=24000000L
+mkrzero_no_bl_24mhz.build.usb_product="Arduino MKRZero"
+mkrzero_no_bl_24mhz.build.usb_manufacturer="Arduino LLC"
+mkrzero_no_bl_24mhz.build.board=SAMD_MKRZERO
+mkrzero_no_bl_24mhz.build.core=arduino
+mkrzero_no_bl_24mhz.build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags}
+mkrzero_no_bl_24mhz.build.ldscript=linker_scripts/gcc/flash_without_bootloader.ld
+mkrzero_no_bl_24mhz.build.openocdscript=openocd_scripts/arduino_zero.cfg
+mkrzero_no_bl_24mhz.build.variant=mkrzero
+mkrzero_no_bl_24mhz.build.vid=0x2341
+mkrzero_no_bl_24mhz.build.pid=0x804f
+mkrzero_no_bl_24mhz.bootloader.tool=openocd
+mkrzero_no_bl_24mhz.bootloader.file=mkrzero/samd21_sam_ba_arduino_mkrzero.bin
+
+mkrzero_no_bl_8mhz.name=Arduino MKRZERO (no bootloader, 8 MHz)
+mkrzero_no_bl_8mhz.vid.0=0x2341
+mkrzero_no_bl_8mhz.pid.0=0x804f
+mkrzero_no_bl_8mhz.vid.1=0x2341
+mkrzero_no_bl_8mhz.pid.1=0x004f
+
+mkrzero_no_bl_8mhz.debug.tool=gdb-openocd
+mkrzero_no_bl_8mhz.upload.tool=bossac
+mkrzero_no_bl_8mhz.upload.protocol=sam-ba
+mkrzero_no_bl_8mhz.upload.maximum_size=262144
+mkrzero_no_bl_8mhz.upload.maximum_data_size=32768
+mkrzero_no_bl_8mhz.upload.use_1200bps_touch=true
+mkrzero_no_bl_8mhz.upload.wait_for_upload_port=true
+mkrzero_no_bl_8mhz.upload.native_usb=true
+mkrzero_no_bl_8mhz.build.mcu=cortex-m0plus
+mkrzero_no_bl_8mhz.build.f_cpu=8000000L
+mkrzero_no_bl_8mhz.build.usb_product="Arduino MKRZero"
+mkrzero_no_bl_8mhz.build.usb_manufacturer="Arduino LLC"
+mkrzero_no_bl_8mhz.build.board=SAMD_MKRZERO
+mkrzero_no_bl_8mhz.build.core=arduino
+mkrzero_no_bl_8mhz.build.extra_flags=-DUSE_ARDUINO_MKR_PIN_LAYOUT -D__SAMD21G18A__ {build.usb_flags}
+mkrzero_no_bl_8mhz.build.ldscript=linker_scripts/gcc/flash_without_bootloader.ld
+mkrzero_no_bl_8mhz.build.openocdscript=openocd_scripts/arduino_zero.cfg
+mkrzero_no_bl_8mhz.build.variant=mkrzero
+mkrzero_no_bl_8mhz.build.vid=0x2341
+mkrzero_no_bl_8mhz.build.pid=0x804f
+mkrzero_no_bl_8mhz.bootloader.tool=openocd
+mkrzero_no_bl_8mhz.bootloader.file=mkrzero/samd21_sam_ba_arduino_mkrzero.bin
+
 # Arduino MKR WiFi 1010
 # --------------------
 mkrwifi1010.name=Arduino MKR WiFi 1010
