@@ -132,6 +132,7 @@ void SystemInit( void )
     /* Wait for synchronization */
   }
 
+#if F_CPU != 8000000L
   /* ----------------------------------------------------------------------------------------------
    * 4) Enable DFLL48M clock
    */
@@ -148,7 +149,7 @@ void SystemInit( void )
 
   SYSCTRL->DFLLMUL.reg = SYSCTRL_DFLLMUL_CSTEP( 31 ) | // Coarse step is 31, half of the max value
                          SYSCTRL_DFLLMUL_FSTEP( 511 ) | // Fine step is 511, half of the max value
-                         SYSCTRL_DFLLMUL_MUL( (VARIANT_MCK + VARIANT_MAINOSC/2) / VARIANT_MAINOSC ) ; // External 32KHz is the reference
+                         SYSCTRL_DFLLMUL_MUL( 1465 ) ; // External 32KHz is the reference, configure for 48 MHz
 
   while ( (SYSCTRL->PCLKSR.reg & SYSCTRL_PCLKSR_DFLLRDY) == 0 )
   {
@@ -223,6 +224,7 @@ void SystemInit( void )
   {
     /* Wait for synchronization */
   }
+#endif
 
   /* ----------------------------------------------------------------------------------------------
    * 5) Switch Generic Clock Generator 0 to DFLL48M. CPU will run at 48MHz.
@@ -284,7 +286,6 @@ void SystemInit( void )
   PM->APBBSEL.reg = PM_APBBSEL_APBBDIV_DIV1_Val ;
   PM->APBCSEL.reg = PM_APBCSEL_APBCDIV_DIV1_Val ;
 
-  //SystemCoreClock=VARIANT_MCK ;
   SystemCoreClock = F_CPU;
 
   /* ----------------------------------------------------------------------------------------------
